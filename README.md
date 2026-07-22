@@ -101,7 +101,7 @@ CREATE TYPE day_of_week_enum AS ENUM ('월요일', '화요일', '수요일', '�
 -- 2-1. Student (학생)
 CREATE TABLE Student (
     id BIGSERIAL PRIMARY KEY,
-    student_id VARCHAR(20) NOT NULL UNIQUE,
+    student_id VARCHAR(50) NOT NULL UNIQUE,
     name VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
@@ -116,7 +116,7 @@ CREATE TABLE Student (
 -- 2-2. Department (학과)
 CREATE TABLE Department (
     id BIGSERIAL PRIMARY KEY,
-    department_id VARCHAR(20) NOT NULL UNIQUE,
+    department_id VARCHAR(50) NOT NULL UNIQUE,
     department_name VARCHAR(100) NOT NULL UNIQUE,
     office_location VARCHAR(100) NOT NULL,
     phone VARCHAR(20) NOT NULL,
@@ -127,7 +127,7 @@ CREATE TABLE Department (
 -- 2-3. Professor (교수)
 CREATE TABLE Professor (
     id BIGSERIAL PRIMARY KEY,
-    professor_id VARCHAR(20) NOT NULL UNIQUE,
+    professor_id VARCHAR(50) NOT NULL UNIQUE,
     name VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
@@ -142,7 +142,7 @@ CREATE TABLE Professor (
 -- 2-4. Course (과목)
 CREATE TABLE Course (
     id BIGSERIAL PRIMARY KEY,
-    course_id VARCHAR(20) NOT NULL UNIQUE,
+    course_id VARCHAR(50) NOT NULL UNIQUE,
     title VARCHAR(100) NOT NULL,
     credit SMALLINT NOT NULL,
     status course_status_enum NOT NULL DEFAULT 'ACTIVE',
@@ -180,7 +180,7 @@ CREATE TABLE Section_Schedule (
 -- 2-7. Enrollment (수강신청)
 CREATE TABLE Enrollment (
     id BIGSERIAL PRIMARY KEY,
-    enrollment_id VARCHAR(20) NOT NULL UNIQUE,
+    enrollment_id VARCHAR(50) NOT NULL UNIQUE,
     student_id BIGINT NOT NULL REFERENCES Student(id) ON DELETE CASCADE ON UPDATE CASCADE,
     section_id BIGINT NOT NULL REFERENCES Section(id) ON DELETE CASCADE ON UPDATE CASCADE,
     mid_score NUMERIC(5,2),
