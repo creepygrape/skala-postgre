@@ -5,15 +5,16 @@ PostgreSQL 기반의 대학 학사관리 시스템 데이터베이스 설계 및
 ---
 
 ## 📌 0. 목차
-1. [시스템 요구사항 및 설계 방향](#-1-시스템-요구사항-및-설계-방향)
-2. [데이터베이스 ERD 및 접속 화면](#-2-데이터베이스-erd-및-접속-화면)
-3. [DB 및 스키마 생성 SQL](#-3-db-및-스키마-생성-sql)
-4. [테이블 생성 DDL SQL](#-4-테이블-생성-ddl-sql)
-5. [샘플 데이터 INSERT SQL](#-5-샘플-데이터-insert-sql)
-6. [주요 기능별 SELECT 실습 SQL](#-6-주요-기능별-select-실습-sql)
+- [시스템 요구사항 및 설계 방향](#requirements)
+- [데이터베이스 ERD 및 접속 화면](#erd)
+- [DB 및 스키마 생성 SQL](#schema)
+- [테이블 생성 DDL SQL](#ddl)
+- [샘플 데이터 INSERT SQL](#insert)
+- [주요 기능별 SELECT 실습 SQL](#select)
 
 ---
 
+<a name="requirements"></a>
 ## 📋 1. 시스템 요구사항 및 설계 방향
 
 ### 0️⃣ PostgreSQL ENUM 타입 정의
@@ -51,6 +52,7 @@ PostgreSQL 기반의 대학 학사관리 시스템 데이터베이스 설계 및
 
 ---
 
+<a name="erd"></a>
 ## 🖼️ 2. 데이터베이스 ERD 및 접속 화면
 
 ### ERD (Entity-Relationship Diagram)
@@ -61,6 +63,7 @@ PostgreSQL 기반의 대학 학사관리 시스템 데이터베이스 설계 및
 
 ---
 
+<a name="schema"></a>
 ## 🛠️ 3. DB 및 스키마 생성 (SQL)
 
 ### `create_db.sql`
@@ -81,6 +84,7 @@ SET search_path TO academic, public;
 ```
 ---
 
+<a name="ddl"></a>
 ## 🏗️ 4. 테이블 생성 DDL (SQL)
 
 ### `create_table.sql`
@@ -216,6 +220,7 @@ CREATE TABLE Student_Professor (
 
 ---
 
+<a name="insert"></a>
 ## 📥 5. Sample Data INSERT (SQL)
 
 ### `insert_data.sql`
@@ -345,6 +350,7 @@ INSERT INTO Student_Professor (student_id, professor_id, department_id) VALUES
 
 ---
 
+<a name="select"></a>
 ## 🔍 6. 주요 기능별 SELECT 실습 (SQL)
 
 ### 1️⃣ SELECT + WHERE + ORDER BY 기초 조회
