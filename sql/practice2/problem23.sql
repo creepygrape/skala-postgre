@@ -13,4 +13,3 @@
 -- - 결과에 전체 학과별 학생
 --   수(total_in_major)도 COUNT()
 --   OVER(PARTITION BY major)로 추가
-

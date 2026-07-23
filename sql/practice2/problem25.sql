@@ -1,16 +1,14 @@
 -- 문제 25
--- 각 학과(major)별로 GPA가 높은 순서로 순위를
--- 매기고, 상위 3명씩만 추출하는 쿼리를 Window
--- Function으로 작성하세요.
--- (서브쿼리 방식과 CTE 방식 모두 작성)
--- - ROW_NUMBER() OVER (PARTITION BY
---   major ORDER BY gpa DESC)로 학과 내
---   순위를 계산
--- - GPA가 동일한 경우 student_id 오름차순을
---   2차 기준으로 사용
--- - RANK()와 DENSE_RANK()를 함께 계산해
---   동점 처리 방식 차이를 비교
--- - 결과에 전체 학과별 학생
---   수(total_in_major)도 COUNT()
---   OVER(PARTITION BY major)로 추가
-
+-- orders 테이블의 주문을 order_id 순으로
+-- 정렬하여 누적 주문금액과 3개 주문 이동평균
+-- 계산 (ROWS BETWEEN 사용)
+-- - SUM(amount) OVER (ORDER BY order_id
+--   ROWS BETWEEN UNBOUNDED PRECEDING
+--   AND CURRENT ROW)로 누적합 계산
+-- - AVG(amount) OVER (ORDER BY order_id
+--   ROWS BETWEEN 2 PRECEDING AND
+--   CURRENT ROW)로 3개 이동평균 계산
+-- - customer_id별로 PARTITION을 나눠 고객
+--   별 누적 구매금액도 함께 계산
+-- - 누적합이 전체 합의 50%를 초음하는 첫 번
+--   째 order_id를 찾는 쿼리를 작성
