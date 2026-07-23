@@ -1,0 +1,13 @@
+-- 문제 22
+-- emp 테이블은 CEO(manager_id = NULL) →
+-- 매니저(10명) → 개발자(300명)의 3단계 계층
+-- 구조입니다.
+-- WITH RECURSIVE로 모든 직원의 계층 경로와
+-- 깊이를 출력
+-- - WITH RECURSIVE로 CEO에서 시작하는
+--   조직 트리를 탐색
+-- - 각 행에 depth(0=CEO), path 컬럼을 포함
+--   (예: 'CEO > Mgr_2 > Dev_15')
+-- - 매니저별 직속 부하 직원 수를 집계하는 쿼리
+--   별도로 작성 (컬럼명 : direct_reports)
+
