@@ -1,0 +1,2 @@
+-- Materialized View 활용
+-- mv_daily_gmv로 리포트 질의 가속, 갱신 전략 검토

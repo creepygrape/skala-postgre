@@ -1,0 +1,1 @@
+-- Q1) 지난 한 달간 실제 팔린 총 금액 보기(paid + shipped + deliverd)
