@@ -32,21 +32,3 @@ SELECT
         2
     ) AS "30일 내 재구매율 (%)"
 FROM recent_first_order;
-
-
--- 가입 월별 재구매율
--- WITH monthly_orders AS (
--- SELECT customer_id, DATE_TRUNC('month'
--- , order_date) AS order_month
--- FROM orders
--- ),
--- first_order AS (
--- SELECT customer_id, MIN(order_month) AS cohort_month
--- FROM monthly_orders GROUP BY customer_id
--- )
--- SELECT fo.cohort_month,
--- mo.order_month,
--- COUNT(DISTINCT fo.customer_id) AS customers,
--- EXTRACT(MONTH FROM AGE(mo.order_month, fo.cohort_month)) AS months_after
--- FROM first_order fo JOIN monthly_orders mo USING(customer_id)
--- GROUP BY 1, 2 ORDER BY 1, 2;

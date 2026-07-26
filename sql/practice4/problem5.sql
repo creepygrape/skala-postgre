@@ -40,4 +40,5 @@ SELECT
 FROM customers c
 LEFT JOIN all_last_order alo ON c.customer_id = alo.customer_id
 LEFT JOIN recent_rfm rf ON c.customer_id = rf.customer_id
-ORDER BY c.customer_id ASC;
+ORDER BY c.customer_id ASC
+LIMIT 10;
